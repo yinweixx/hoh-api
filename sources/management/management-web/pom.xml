@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.anyun.cloud.demo</groupId>
+        <artifactId>anyun-cloud-demo-management-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <groupId>com.anyun.cloud.demo</groupId>
+    <artifactId>anyun-cloud-management-web-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Cloud Management Web Parent</name>
+
+    <description>
+        Cloud Management Web Parent POM
+    </description>
+
+    <properties>
+        <version.thymeleaf>3.0.6.RELEASE</version.thymeleaf>
+        <version.fcs>2.0.21</version.fcs>
+        <version.jgit>3.5.0.201409260305-r</version.jgit>
+        <version.jaxrs>2.0</version.jaxrs>
+    </properties>
+
+    <modules>
+        <module>cloud-management-common</module>
+        <module>cloud-management-web</module>
+        <module>cloud-management-web-class</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf</artifactId>
+                <version>${version.thymeleaf}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lukehutch</groupId>
+                <artifactId>fast-classpath-scanner</artifactId>
+                <version>${version.fcs}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit</artifactId>
+                <version>${version.jgit}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${version.jaxrs}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

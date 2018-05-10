@@ -1,0 +1,176 @@
+
+
+.t{
+    float: left;
+    line-height: 42px;
+}
+.txt{
+    width:450px;
+    height:32px;
+    margin-left: 60px;
+    background:#F5F6F7;
+    border-left:2px solid #999;
+    border-right:2px solid #999;
+}
+.tt{
+    width:450px;
+    height:32px;
+    background:#F5F6F7;
+    border-left:2px solid #999;
+    border-right:2px solid #999;
+}
+/*#pu:-ms-input-placeholder{*/
+/*color: red;!important;*/
+/*}*/
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #c5c5c5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #c5c5c5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #c5c5c5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #c5c5c5;
+}
+
+/*.radio{display: inline-block;*display: inline;*zoom:1;height: 24px; line-height: 24px; margin-right: 20px;}*/
+/*.radio ins{display: inline-block;*display: inline;*zoom:1; width: 23px; height: 22px;*/
+/*vertical-align: middle; background: url(http://www.bootcss.com/p/icheck/skins/square/blue.png) no-repeat; margin-right: 8px;*/
+/*-webkit-transition:all 0.1s linear; -moz-transition:all 0.1s linear; -o-transition:all 0.1s linear; -ms-transition:all 0.1s linear;*/
+/*transition:all 0.1s linear;vertical-align: middle;}*/
+
+/*.radio ins{background-position: -120px 0px; }*/
+
+/*.radio .hover{background-position: -144px 0px;}*/
+/*.radio .checked{background-position: -168px 0px;}*/
+/*.radio .enable{background-position: -214px 0px;}*/
+/*.radio .disabled{background-position: -191px 0px;}*/
+/*.radio span{display: inline-block;*display: inline;*zoom:1;vertical-align: middle; }*/
+
+
+.btn-color{
+    border-color:#999;
+    color: black;
+    navbutton_background_color: #eae4e4;
+}
+.btn-color:hover{
+    background-color: #eae4e4; ;
+    color: #FFFFFF;
+}
+
+
+
+
+
+.middle-content{
+    margin-left:200px;
+}
+
+/*.form-group{*/
+/*width:1170px;*/
+/*min-height:40px;*/
+/*line-height:40px;*/
+/*margin-bottom:20px;*/
+/*}*/
+
+/*.form-control{*/
+/*background: #fff;*/
+/*width:374px;*/
+/*border:none;*/
+/*border-left:2px solid #CACBCC;*/
+/*border-right:2px solid #CACBCC;*/
+/*border-radius: 0;*/
+/*color:#3a3b3c;*/
+/*}*/
+
+.circle{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: -3px;
+    margin-left: 1px;
+    margin-right: 9px;
+    vertical-align: middle;
+    border: 2px solid #989A9B;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 0.3s linear;
+}
+
+.border-six{
+    border: 6px solid #28CAEB;
+}
+
+.transparent{
+    background: transparent;
+}
+
+.radio{
+    margin-bottom:0;
+    padding-left:0;
+}
+
+.chart-preview{
+    height:360px;
+    border:1px solid #ddd;
+    margin-top:10px;
+}
+
+
+.circle:hover{
+    box-shadow: 0 0 20px  #989A9B;
+}
+
+line{
+    fill: none;
+}
+
+
+.chart-radios{
+    height: 380px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menu-style{
+    border-radius: 0px;
+    padding:5px;
+}
+
+
+.ng-scope{
+    padding-left:10px;
+}
+
+.chart-radio img{
+    width:160px;
+    height:131px;
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.option-style{
+    line-height: 20px;
+}
+
+
+/*.form-search{*/
+/*border: 1px solid #ddd;*/
+/*width: 280px;*/
+/*height: 35px;*/
+/*margin: 5px;*/
+/*}*/
+
+
+
+
+

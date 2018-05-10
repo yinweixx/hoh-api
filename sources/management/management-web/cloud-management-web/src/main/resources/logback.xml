@@ -1,0 +1,19 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <Target>System.out</Target>
+        <encoder>
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][%-5level] %class - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <root>
+        <level value="ERROR"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+    <logger name="com.anyun" level="debug" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache.zookeeper" level="error" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+</configuration>

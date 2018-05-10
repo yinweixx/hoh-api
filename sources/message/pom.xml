@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.anyun.cloud.demo</groupId>
+        <artifactId>anyun-cloud-demo-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <groupId>com.anyun.cloud.demo</groupId>
+    <artifactId>anyun-cloud-message-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Demo Message Librarys</name>
+
+    <description>
+        Demo message librarys
+    </description>
+
+    <properties>
+        <version.demo.common.root>1.0.0</version.demo.common.root>
+        <version.gson>2.8.0</version.gson>
+    </properties>
+
+    <modules>
+        <module>client</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.anyun.cloud.demo</groupId>
+                <artifactId>anyun-common-lang</artifactId>
+                <version>${version.demo.common.root}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anyun.cloud.demo</groupId>
+                <artifactId>anyun-cloud-demo-common-registry</artifactId>
+                <version>${version.demo.common.root}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${version.gson}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.anyun.cloud.demo</groupId>
+  <artifactId>maven-cloud-service-create</artifactId>
+  <version>1.0.0</version>
+  <packaging>maven-plugin</packaging>
+</project>

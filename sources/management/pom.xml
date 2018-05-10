@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.anyun.cloud.demo</groupId>
+        <artifactId>anyun-cloud-demo-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <groupId>com.anyun.cloud.demo</groupId>
+    <artifactId>anyun-cloud-demo-management-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Demo Cloud Managements</name>
+
+    <description>
+        Demo cloud service managements
+    </description>
+
+    <properties>
+        <version.anyun.common>1.0.0</version.anyun.common>
+        <version.springshell>1.2.0.RELEASE</version.springshell>
+    </properties>
+
+    <modules>
+        <module>cloud-management-cli</module>
+        <module>cloud-dispatch</module>
+        <module>management-web</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.anyun.cloud.demo</groupId>
+                <artifactId>anyun-cloud-demo-common-registry</artifactId>
+                <version>${version.anyun.common}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anyun.cloud.demo</groupId>
+                <artifactId>anyun-common-lang</artifactId>
+                <version>${version.anyun.common}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anyun.cloud.demo</groupId>
+                <artifactId>anyun-cloud-demo-common-etcd</artifactId>
+                <version>${version.anyun.common}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.shell</groupId>
+                <artifactId>spring-shell</artifactId>
+                <version>${version.springshell}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

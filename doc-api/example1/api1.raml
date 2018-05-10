@@ -1,0 +1,75 @@
+#%RAML 1.0
+title: API例子1
+version: v1.0.0
+baseUri: app1/api/{version}
+mediaType: application/json
+description: |
+  API例子1的描述
+documentation: 
+ - title: 例子
+   content: |
+     一个API定义的例子
+types:
+  Type1:
+    properties:
+      prop1:
+        type: string
+        required: true
+        example: test string
+      prop2:
+        type: boolean
+        required: false
+      prop3:
+        type: integer
+        required: false
+        example: 2
+  Type2:
+    properties:
+      prop1:
+        type: string
+        required: true
+/api1:
+  displayName: sample api1
+  description: api1的描述
+  get:
+    queryParameters:
+      p1:
+        description: 参数1的描述
+        type: integer
+        required: true
+        example: 1
+      p2:
+        description: 参数2的描述
+        type: string
+        required: false
+        example: querystring2
+    responses:
+      200:
+        body:
+          application/json:
+            type: Type2
+/api1/api1-1:
+  displayName: sample api3
+  description: api3的描述
+  get:
+    queryParameters:
+      p3-1:
+        description: 参数1的描述
+        type: string
+        required: false
+        example: example
+/api2:
+  displayName: sample api2
+  description: api2的描述
+  post:
+    body:
+      application/json:
+        type: Type1
+resourceTypes:
+  sample api1:
+    usage: service1
+    description: 用于api1交互使用的服务
+
+  sample api2:
+    usage: service2
+    description: 用于api2交互使用的服务

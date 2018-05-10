@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.ico}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>API Administration</title>
+
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link th:href="@{/css/animate.min.css}" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link th:href="@{/css/light-bootstrap-dashboard.css}" rel="stylesheet"/>
+
+    <!--<link href="assets/css/bootstrap.css" rel="stylesheet">-->
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link th:href="@{/css/demo.css}" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link th:href="@{http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{http://fonts.googleapis.com/css?family=Roboto:400,700,300}" rel='stylesheet' type='text/css'>
+    <link th:href="@{/css/pe-icon-7-stroke.css}" rel="stylesheet" />
+    <!--二级菜单栏样式-->
+    <link th:href="@{/css/second.css}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="assets/css/examples.css" />-->
+
+    <!--弹框-->
+    <script type="text/javascript" th:inline="javascript" th:src="@{/js/zDrag.js}"></script>
+    <script type="text/javascript" th:inline="javascript" th:src="@{/js/zDialog.js}"></script>
+
+    <!--编辑-->
+    <script th:src="@{/js/jquery-1.11.3.js}" type="text/javascript" th:inline="javascript"></script>
+    <script type="text/javascript" th:inline="javascript" th:src="@{/js/editor.js}"></script>
+    <link th:href="@{/css/setting.css}" rel="stylesheet">
+
+    <!--export弹框-->
+    <link th:href="@{/css/tiers.css}" rel="stylesheet"/>
+    <script th:src="@{/js/tiers.js}"></script>
+
+    <!--more列表弹框-->
+    <link th:href="@{/css/slatiers.css}" rel="stylesheet"/>
+
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="/images/sidebar-3.jpg">
+
+        <!--
+
+            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+            Tip 2: you can also add an image using data-image tag
+
+        -->
+
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Creative Tim
+                </a>
+            </div>
+
+            <ul class="nav">
+
+                <li>
+                    <a th:href="@{project.html}">
+                        <i class="pe-7s-back-2"></i>
+                        <p>API Administration</p>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{applications.html}">
+                        <i class="pe-7s-plugin"></i>
+                        <p>Applications</p>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{permissions.html}">
+                        <i class="pe-7s-medal"></i>
+                        <p>Permissions</p>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{pol.html}">
+                        <i class="pe-7s-ribbon"></i>
+                        <p>Policies</p>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{tiers.html}">
+                        <i class="pe-7s-cup"></i>
+                        <p>SLA Tiers</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a th:href="@{settings.html}">
+                        <i class="pe-7s-settings"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Settings</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+                                <p class="hidden-lg hidden-md">Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe"></i>
+                                <b class="caret hidden-sm hidden-xs"></b>
+                                <span class="notification hidden-sm hidden-xs">5</span>
+                                <p class="hidden-lg hidden-md">
+                                    5 Notifications
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-search"></i>
+                                <p class="hidden-lg hidden-md">Search</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="">
+                                <p>Account</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <p>
+                                    Dropdown
+                                    <b class="caret"></b>
+                                </p>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>Log out</p>
+                            </a>
+                        </li>
+                        <li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="card" style="height: 600px">
+                            <div class="header" style="padding-top:50px;">
+                                <div class="row">
+                                    <div class="col-md-2 editor">
+                                        <h4 class="ng-scope">
+                                                 <span>
+                                                     <strong>Test API</strong>
+                                                 </span>
+                                            <i class="pe-7s-pen pen"  style="margin-left: 15px"></i>
+                                        </h4>
+
+                                        <div class="form-group none">
+                                            <input type="text" class="txt" value="Test API" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group" style="float: right">
+                                    <!--<input class="btn btn-info btn-fill pull-left" type="button" value="Export" onclick="" style="margin-right: 7px"/>-->
+                                    <a href="#myModal" type="button" class="btn btn-info btn-fill pull-left" data-toggle="modal" style="margin-right: 7px">Export</a>
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                            <p class="dropdown-toggle" data-toggle="dropdown" >
+                                                <button class="btn btn-info btn-fill pull-left">More<b class="pe-7s-angle-down"></b></button>
+                                            </p>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#myModal2" type="button" data-toggle="modal"><p>Deprecate</p> </a></li>
+                                                <li><a href="#myModal3" type="button" data-toggle="modal"><p>Delete</p> </a></li>
+                                                <li><a href="#myModal4" type="button" data-toggle="modal"><p>Term&Conditions</p> </a></li>
+                                            </ul>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2 editor">
+                                        <ul class="nav navbar-nav ">
+                                            <li class="dropdown">
+                                                <p class="dropdown-toggle ng-scope" data-toggle="dropdown"style="font-size: 20px">
+                                                    v 1.1.0
+                                                    <b class="caret"></b>
+                                                </p>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#"><p>v 1.1.1</p> </a></li>
+                                                </ul>
+                                                <div class="form-group none">
+                                                    <input type="text" class="txt" value="v 1.1.0"/>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p class="lf hid">
+                                            <i class="pe-7s-pen pen" style="margin-left: 15px;font-size: 20px"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 30px">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3">API Status: <p class="pe-7s-less"></p>Unregistered</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2"><img th:src="@{/images/sla.jpg}"></div>
+                                    <div class="col-md-7">
+                                        You can define <a href="">Service Level Agreement (SLA) tiers</a> to manage traffic to your API version.
+                                    </div>
+                                    <div class="col-md-9" style="margin-top: 8px">
+                                        First, you need to<a href="">set the API URL.</a>Then, come back here to create SLA tiers.
+                                        To enforce your SLA tiers, be sure to apply SLA tier enforcement <a href="">policies.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a th:href="@{http://www.creative-tim.com}">Creative Tim</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Export API version</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin-top:10px;">
+                    Exporting an API version allows you to transfer its data to another organization.
+                </p>
+                <p style="margin-top:10px;">
+                    The content will be downloaded in a file that can be uploaded to the API administration page.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-class="{open:expanded}" class="open">
+                <div class="text-info" ng-click="expanded!=expanded">
+                             <span class="caret angel" ng-class="{'caret-close':!expanded}">
+                             </span>
+                    What data will be exported?
+                </div>
+                <div ng-show="expanded">
+                    <ul class="list-unstyled block">
+                        <li>- API name, version and description</li>
+                        <li>- RAML files</li>
+                        <li>- SLA tier definitions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p style="padding-top:10px;">Do you want to export the following data as well?</p>
+                <div class="checkbox_item">
+                    <input type="checkbox" name="portal"/>
+                    <label for="portal">
+                                     <span class="ck  background current">
+                                         <span class="tick"></span>
+                                     </span>
+                        API portal
+
+
+                    </label>
+                </div>
+
+                <div class="checkbox_item child">
+                    <input type="checkbox" name="portal" disabled="disabled"/>
+                    <label for="Attachments">
+                                     <span class=" ck ck_input background current_child">
+                                          <span class="tick"></span>
+                                     </span>
+                        Attachments
+                    </label>
+                </div>
+                <div class="checkbox_item child">
+                    <input type="checkbox" name="portal" disabled="disabled"/>
+                    <label for="Images">
+
+                                     <span class=" ck ck_input background current_child">
+                                         <span class="tick"></span>
+                                     </span>
+                        Images
+
+
+                    </label>
+                </div>
+
+                <div class="checkbox_item">
+                    <input type="checkbox" name="portal"/>
+                    <label for="endpoint">
+                                     <span  class="ck background">
+                                         <span class="tick"></span>
+                                     </span>
+                        Endpoint (including applied policies).
+                    </label>
+                </div>
+
+                <em>Note: Themes and custom policies are not exported.</em>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer clearfix">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancle</button>
+        <button class="btn btn-primary btn-info btn-fill ">Export</button>
+    </div>
+</div>
+
+<div id="myModal2" class="modal fade modal-width" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="myModalLabel">Deprecate API version</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin-top:10px;">
+                    Users will not be able to request access to the "Test API - v1.1.0" API version.
+                </p>
+                <p style="margin-top:10px;">
+
+                    Are you sure you want to deprecate it?
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer clearfix modal-footer-margin">
+        <button class="btn btn-primary btn-info btn-fill "data-dismiss="modal" aria-hidden="true">OK</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancle</button>
+    </div>
+</div>
+
+<div id="myModal3" class="modal fade modal-width" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header3">
+        <button type="button" class="close3" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="myModalLabel">Delete API Version</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin-top:10px;">
+                    Are you sure you want to delete API version <strong>v1.1.0</strong>?
+                </p>
+                <p style="margin-top:10px;">
+
+                    <strong>This action cannot be undone</strong> and will include deletion of associated RAML
+                    files and removal of links to the associated portal.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer clearfix modal-footer-margin">
+        <button class="btn btn-color">Delete</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancle</button>
+    </div>
+</div>
+
+
+<div id="myModal4" class="modal fade modal-width3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="myModalLabel">Add request API access terms & conditions</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="txte"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer clearfix modal-footer-margin">
+        <button class="btn pull-left">Preview</button>
+        <button class="btn btn-primary btn-info btn-fill ">Add</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancle</button>
+    </div>
+</div>
+
+</body>
+
+
+
+
+
+<!--   Core JS Files   -->
+<script th:src="@{/js/jquery-1.10.2.js}" type="text/javascript" th:inline="javascript"></script>
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript" th:inline="javascript"></script>
+
+<!--  Checkbox, Radio & Switch Plugins -->
+<script th:src="@{/js/bootstrap-checkbox-radio-switch.js}"></script>
+
+<!--  Charts Plugin -->
+<script th:src="@{/js/chartist.min.js}"></script>
+
+<!--  Notifications Plugin    -->
+<script th:src="@{/js/bootstrap-notify.js}"></script>
+
+<!--  Google Maps Plugin    -->
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script th:src="@{/js/light-bootstrap-dashboard.js}"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script th:src="@{/js/demo.js}"></script>
+
+
+<script type="text/javascript" th:inline="javascript">
+
+    <!--
+    var LastLeftID = "";
+    function menuFix() {
+        var obj = document.getElementById("nav").getElementsByTagName("li");
+
+        for (var i=0; i<obj.length; i++) {
+            obj[i].onmouseover=function() {
+                this.className+=(this.className.length>0? " ": "") + "sfhover";
+            }
+            obj[i].onMouseDown=function() {
+                this.className+=(this.className.length>0? " ": "") + "sfhover";
+            }
+            obj[i].onMouseUp=function() {
+                this.className+=(this.className.length>0? " ": "") + "sfhover";
+            }
+            obj[i].onmouseout=function() {
+                this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+            }
+        }
+    }
+    function DoMenu(emid)
+    {
+        var obj = document.getElementById(emid);
+        obj.className = (obj.className.toLowerCase() == "expanded"?"collapsed":"expanded");
+        if((LastLeftID!="")&&(emid!=LastLeftID)) //关闭上一个Menu
+        {
+            document.getElementById(LastLeftID).className = "collapsed";
+        }
+        LastLeftID = emid;
+    }
+    function GetMenuID()
+    {
+        var MenuID="";
+        var _paramStr = new String(window.location.href);
+        var _sharpPos = _paramStr.indexOf("#");
+
+        if (_sharpPos >= 0 && _sharpPos < _paramStr.length - 1)
+        {
+            _paramStr = _paramStr.substring(_sharpPos + 1, _paramStr.length);
+        }
+        else
+        {
+            _paramStr = "";
+        }
+
+        if (_paramStr.length > 0)
+        {
+            var _paramArr = _paramStr.split("&");
+            if (_paramArr.length>0)
+            {
+                var _paramKeyVal = _paramArr[0].split("=");
+                if (_paramKeyVal.length>0)
+                {
+                    MenuID = _paramKeyVal[1];
+                }
+            }
+            /*
+             if (_paramArr.length>0)
+             {
+             var _arr = new Array(_paramArr.length);
+             }
+
+             //取所有#后面的，菜单只需用到Menu
+             //for (var i = 0; i < _paramArr.length; i++)
+             {
+             var _paramKeyVal = _paramArr[i].split('=');
+
+             if (_paramKeyVal.length>0)
+             {
+             _arr[_paramKeyVal[0]] = _paramKeyVal[1];
+             }
+             }
+             */
+        }
+
+        if(MenuID!="")
+        {
+            DoMenu(MenuID)
+        }
+    }
+    GetMenuID(); //*这两个function的顺序要注意一下，不然在Firefox里GetMenuID()不起效果
+    menuFix();
+    -->
+
+</script>
+
+</html>
